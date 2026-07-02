@@ -1,0 +1,152 @@
+.home-container {
+  padding: 16px;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-bar {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+  padding: 8px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.view-toggle ion-button {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --min-height: 36px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.view-toggle .view-btn.active {
+  --color: var(--ion-color-primary);
+  --background: var(--ion-color-primary-tint);
+}
+
+.mesas-grid-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.mesas-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .mesas-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-container {
+    padding: 12px;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+}
+
+@media (min-width: 481px) and (max-width: 900px) {
+  .mesas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .mesas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1201px) {
+  .mesas-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.mesa-card {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+
+.mesa-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--ion-color-primary);
+}
+
+.mesa-card:active {
+  transform: scale(0.97);
+}
+
+.mesa-card.mesa-disponivel {
+  border-left: 4px solid var(--ion-color-success);
+}
+
+.mesa-card.mesa-ocupada {
+  border-left: 4px solid var(--ion-color-warning);
+}
+
+.mesa-card ion-card-header {
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.mesa-card-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.mesa-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-top: 0;
+}
+
+.mesa-card-content ion-badge {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.mesa-chairs {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+  margin: 4px 0 0 0;
+}
+
+.mesas-list {
+  background: transparent;
+}
+
+.mesa-list-item {
+  --border-radius: 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.mesa-list-item.mesa-disponivel {
+  --border-left: 4px solid var(--ion-color-success);
+}
+
+.mesa-list-item.mesa-ocupada {
+  --border-left: 4px solid var(--ion-color-warning);
+}
+
+.pagination-bar-container {
+  background: var(--ion-background-color);
+}
